@@ -1,3 +1,4 @@
+import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,16 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent {
-  title: string;
-  author: string;
-  price: number;
-  rating: number;
+  book: Book;
 
   constructor() {
-    this.title = 'The Alchemist';
-    this.author = 'Paulo Cohelo';
-    this.price = 23;
-    this.rating = 4;
+      this.book = new Book('The Alchemist', 'Paulo Cohelo', 23, 4);
   }
 
 }
