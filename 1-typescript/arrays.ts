@@ -31,3 +31,9 @@ let numbers = [32,1,44,77,2,3,7];
 let largest = numbers.reduce((res, n) => res > n ? res : n, numbers[0] );
 console.log(largest);
 
+let sumOfEvenFibNumbers = fibNumbers
+    .filter( n => n%2 == 0)
+    .reduce( (res, n) => res + n, 0);
+
+console.log(sumOfEvenFibNumbers);
+
