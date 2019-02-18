@@ -1,3 +1,5 @@
+import { Item } from './../../models/item';
+import { Cart } from './../../models/cart';
 import { Book } from './../../models/book';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,6 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookListComponent {
   books: Book[];
+  cart: Cart;
 
   constructor() {
 
@@ -32,7 +35,23 @@ export class BookListComponent {
       5);
     
     this.books = [book1, book2, book3, book4];
+    this.cart = new Cart([], 0);
+  }
 
+  rateUp(i) {
+    if(this.books[i].rating < 5)
+      this.books[i].rating++;
+  }
+
+  rateDown(i) {
+    if(this.books[i].rating > 1)
+      this.books[i].rating--;
+  }
+
+  addToCart(i) {
+    let book = this.books[i];
+    let item = new Item(book.title, book.price, 1);
+    this.cart.addItem(item);
   }
 
 }

@@ -13,3 +13,10 @@
 .highRated {
     background-color: cadetblue;
 }
+th {
+    background-color: brown;
+    color: white;
+}
+td {
+    background-color: aquamarine;
+}
