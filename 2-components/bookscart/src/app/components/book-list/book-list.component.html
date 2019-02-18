@@ -1,4 +1,9 @@
-<div class="book">
+<div 
+  *ngFor="let book of books" 
+  class="book"
+  [hidden]="book.rating < 2"
+  [class.highRated]="book.rating==5"
+>
   <div class="title">{{book.title}}</div>
   <div class="author">{{book.author}}</div>
   <div>{{book.price}}</div>
