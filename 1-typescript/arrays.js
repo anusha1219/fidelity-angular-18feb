@@ -18,5 +18,9 @@ var sum = fibNumbers.reduce(function (res, n) { return res + n; }, 0);
 console.log(sum);
 var prod = fibNumbers.reduce(function (res, n) { return res * n; }, 1);
 var numbers = [32, 1, 44, 77, 2, 3, 7];
-var largest = numbers.reduce(function (res, n) { return res > n ? res : n; }, -Infinity);
+var largest = numbers.reduce(function (res, n) { return res > n ? res : n; }, numbers[0]);
 console.log(largest);
+var sumOfEvenFibNumbers = fibNumbers
+    .filter(function (n) { return n % 2 == 0; })
+    .reduce(function (res, n) { return res + n; }, 0);
+console.log(sumOfEvenFibNumbers);
